@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" />
+    <title>HOME</title>
+  </head>
+  <body>
+    <div class="background_1">
+      <div class="div-down">
+        <div>
+          <a href="/"
+            ><img
+              src="{% static 'img/icon.svg' %}"
+              alt="icon"
+              width="60px"
+              height="60px"
+              class="icon"
+          /></a>
+        </div>
+        <div>
+          <nav class="navbar">
+            <ul>
+              <li>
+                <a href="#" class="font-login target-link-login">Увійти</a>
+              </li>
+              <li>
+                <a href="for_parents.html" class="font target-link"
+                  >Для батьків</a
+                >
+              </li>
+              <li>
+                <a href="for_students.html" class="font target-link"
+                  >Для учнів</a
+                >
+              </li>
+              <li><a href="/" class="font target-link">Головна</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div>
+        <h1 class="hello">Привіт!</h1>
+        <div class="under-hello">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dui gravida
+            laoreet feugiat neque, lectus vitae risus. Volutpat mauris enim et
+            commodo, ac mollis. Sollicitudin sed molestie aenean sed molestie
+            pellentesque.
+          </p>
+        </div>
+      </div>
+      <p>
+        <a href="#LEARN" class="learn-more target-link">Дізнатися більше</a>
+      </p>
+      <p><a href="#" class="login-down target-link-login">Увійти</a></p>
+    </div>
+
+    <div class="background_2">
+      <h2 class="why" id="LEARN">Чому ми найкращі?</h2>
+      <table class="svg-left">
+        <tr>
+          <div class="table1">
+            <td><img src="{% static 'img/creative.svg' %}" /></td>
+            <td class="text-table-left">Ми креативні та творчі</td>
+            <td class="under-text-table-left">Some text</td>
+          </div>
+        </tr>
+        <tr>
+          <td class="table1"><img src="{% static 'img/modern.svg' %}" /></td>
+          <td class="text-table-left">Ми сучасні</td>
+          <td class="under-text-table-left">some text</td>
+        </tr>
+        <tr>
+          <td class="table1"><img src="{% static 'img/worklove.svg' %}" /></td>
+          <td class="text-table-left">Ми працелюбні</td>
+          <td class="under-text-table-left">some text</td>
+        </tr>
+      </table>
+      <table class="svg-right">
+        <tr>
+          <td class="under-text-table-right">some text</td>
+          <td class="text-table-right">Ми переможці</td>
+          <td><img src="{% static 'img/winner.svg' %}" /></td>
+        </tr>
+        <tr>
+          <td class="under-text-table-right">Some text</td>
+          <td class="text-table-right">Ми розумні</td>
+          <td><img src="{% static 'img/smart.svg' %}" /></td>
+        </tr>
+        <tr>
+          <td class="under-text-table-right">Some text</td>
+          <td class="text-table-right">Ми стильні</td>
+          <td><img src="{% static 'img/style.svg' %}" /></td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <img src="{% static 'img/girl.svg' %}" class="girl" />
+    </div>
+    <div class="background_3">
+      <div><h2 class="join">Приєднуйся до нашої сім'ї</h2></div>
+
+      <div class="gallery">
+        <img src="{% static 'img/carousel/first.svg' %}" alt="first slide" />
+        <img src="{% static 'img/carousel/second.svg' %}" alt="second slide" />
+        <img src="{% static 'img/carousel/third.svg' %}" alt="third slide" />
+        <img src="{% static 'img/carousel/fourth.svg' %}" alt="fourth slide" />
+        <img src="{% static 'img/carousel/fifth.svg' %}" alt="fifth slide" />
+      </div>
+    </div>
+    <div class="background_4">
+      <div>
+        <img src="{% static 'img/form.svg' %}" class="form-box" />
+        <h2 class="consultation">Порібна консультація?</h2>
+        <h3 class="data">
+          Залишай свої данні, та чекай на відповідь від нашої адміністрації
+        </h3>
+      </div>
+      <div>
+        <div class="form">
+          <form method="post">
+            {% csrf_token %} {{form.as_p}}
+            <input type="submit" name="submit" id="submit" value="надіслати" />
+          </form>
+        </div>
+      </div>
+      <footer>
+        <div class="footer">
+          <hr />
+          <p class="copy">&copy; 2022 Дніпрорудненська гімназія "Софія"</p>
+        </div>
+        <div class="links">
+          <a href="tel:+380984140923"><img src="{% static 'img/links/phone.svg' %}" /></a>
+          <a href="mailto:gymnasium.sofia@gmail.com"><img src="{% static 'img/links/mail.svg' %}" /></a>
+          <a href="https://www.facebook.com/priyomnaya.czsofia"><img src="{% static 'img/links/facebook.svg' %}" /></a>
+          <a href="https://www.instagram.com/sophiaprimary.school/"><img src="{% static 'img/links/instagram.svg' %}" /></a>
+        </div>
+      </footer>
+    </div>
+    {% block content %} {% endblock %}
+  </body>
+</html>
